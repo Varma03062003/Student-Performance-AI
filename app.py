@@ -5,10 +5,7 @@ import joblib
 # Load the trained model
 model = joblib.load("student_performance_model.pkl")
 
-
-# -----------------------------
 # Recommendation Function
-# -----------------------------
 
 def generate_recommendations(student):
 
@@ -31,10 +28,7 @@ def generate_recommendations(student):
 
     return recommendations
 
-
-# -----------------------------
 # Performance Level
-# -----------------------------
 
 def performance_level(score):
 
@@ -50,10 +44,7 @@ def performance_level(score):
     else:
         return "Needs Improvement ⚠️"
 
-
-# -----------------------------
 # App Title
-# -----------------------------
 
 st.title("🎓 Student Performance Predictor")
 
@@ -62,10 +53,7 @@ st.write(
     "and receive personalized recommendations."
 )
 
-
-# -----------------------------
 # Student Inputs
-# -----------------------------
 
 study_hours = st.number_input(
     "Study Hours",
@@ -102,10 +90,7 @@ sleep_hours = st.number_input(
     value=7.0
 )
 
-
-# -----------------------------
 # Prediction Button
-# -----------------------------
 
 if st.button("🔮 Predict Score"):
 
@@ -139,10 +124,7 @@ if st.button("🔮 Predict Score"):
     # Generate recommendations
     recommendations = generate_recommendations(student)
 
-
-    # -----------------------------
     # Prediction Result
-    # -----------------------------
 
     st.divider()
 
@@ -156,10 +138,7 @@ if st.button("🔮 Predict Score"):
         f"📊 Performance Level: {level}"
     )
 
-
-    # -----------------------------
     # Student Analytics
-    # -----------------------------
 
     st.subheader("📊 Student Analytics")
 
@@ -185,10 +164,7 @@ if st.button("🔮 Predict Score"):
         analytics_data.set_index("Metric")
     )
 
-
-    # -----------------------------
     # Recommendations
-    # -----------------------------
 
     st.subheader("💡 Personalized Recommendations")
 
