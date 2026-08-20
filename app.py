@@ -12,19 +12,19 @@ def generate_recommendations(student):
     recommendations = []
 
     if student["Study_Hours"] < 4:
-        recommendations.append("📚 Increase your study hours.")
+        recommendations.append("Increase your study hours.")
 
     if student["Attendance"] < 75:
-        recommendations.append("🏫 Improve your class attendance.")
+        recommendations.append("Improve your class attendance.")
 
     if student["Practice_Tests"] < 3:
-        recommendations.append("📝 Complete more practice tests.")
+        recommendations.append("Complete more practice tests.")
 
     if student["Sleep_Hours"] < 6:
-        recommendations.append("😴 Try to get better sleep.")
+        recommendations.append("Try to get better sleep.")
 
     if len(recommendations) == 0:
-        recommendations.append("✅ Your current study habits look good!")
+        recommendations.append("Your current study habits look good!")
 
     return recommendations
 
@@ -33,20 +33,20 @@ def generate_recommendations(student):
 def performance_level(score):
 
     if score >= 85:
-        return "Excellent 🌟"
+        return "Excellent"
 
     elif score >= 70:
-        return "Good 👍"
+        return "Good"
 
     elif score >= 50:
-        return "Average 📖"
+        return "Average"
 
     else:
-        return "Needs Improvement ⚠️"
+        return "Needs Improvement"
 
 # App Title
 
-st.title("🎓 Student Performance Predictor")
+st.title("Student Performance Predictor")
 
 st.write(
     "Enter student information to predict the final exam score "
@@ -92,7 +92,7 @@ sleep_hours = st.number_input(
 
 # Prediction Button
 
-if st.button("🔮 Predict Score"):
+if st.button("Predict Score"):
 
     # Create student DataFrame
     new_student = pd.DataFrame({
@@ -128,19 +128,19 @@ if st.button("🔮 Predict Score"):
 
     st.divider()
 
-    st.subheader("🎯 Prediction Result")
+    st.subheader("Prediction Result")
 
     st.success(
         f"Predicted Final Score: {prediction:.2f} / 100"
     )
 
     st.info(
-        f"📊 Performance Level: {level}"
+        f"Performance Level: {level}"
     )
 
     # Student Analytics
 
-    st.subheader("📊 Student Analytics")
+    st.subheader("Student Analytics")
 
     analytics_data = pd.DataFrame({
         "Metric": [
@@ -166,7 +166,7 @@ if st.button("🔮 Predict Score"):
 
     # Recommendations
 
-    st.subheader("💡 Personalized Recommendations")
+    st.subheader("Personalized Recommendations")
 
     for recommendation in recommendations:
         st.write(recommendation)
